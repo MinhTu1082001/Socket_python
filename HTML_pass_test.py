@@ -7,6 +7,12 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter link website: ')
+# click theo link href theo <a href="...">
+# if urllib.request= True 
+# if urllib.request.urlopen(url, context=ctx).read() != None :
+#     html = urllib.request.urlopen(url, context=ctx).read()
+# else:
+#     print("out") 
 html = urllib.request.urlopen(url, context=ctx).read()
 links = re.findall(b'href="(http[s]?://.*?)"', html)
 for link in links:
